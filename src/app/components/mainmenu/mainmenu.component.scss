@@ -1,0 +1,50 @@
+body{
+    display: flex;
+}
+.booksContainer{
+    display: flex;
+    height: 620px;
+    border: 5px blue solid;
+}
+
+.title-books{
+    width: 250px;
+    font-size: 26px;
+    margin: 5%;
+    border: 5px solid red;
+}
+
+
+mat-sidenav-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-sidenav{
+    width: 150px;
+    height: 900px;
+    background-color: rgb(79, 43, 141);
+    font-size: 26px;
+    color: white;
+
+}
+
+mat-nav-list{
+   margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+}
+
+a.nav-bar{
+    margin-bottom: 20px;
+    //border: 2px dotted yellow;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.active{
+    border-left: 3px yellow solid;
+    border-bottom: 3px yellow solid;
+    background-color:rgb(62, 24, 128);
+}

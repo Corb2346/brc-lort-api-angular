@@ -1,0 +1,42 @@
+<mat-toolbar color = "primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();"> menu</mat-icon>
+        </button>
+        <div> <h1>Welcome to the One api to rule them all  </h1></div>
+        
+        
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav  > 
+        <mat-nav-list>
+
+           <a class="nav-bar" [routerLink]="['/movies']" routerLinkActive="active"> Movies </a>
+           <a class="nav-bar" [routerLink]="['/characters']" routerLinkActive="active">Characters </a>
+
+        </mat-nav-list>
+    </mat-sidenav >
+    <mat-sidenav-content>
+
+        <div> 
+            <div> <h1> Books from the Lord Of The Rings:</h1></div>
+
+            <div class="booksContainer"> 
+                <div class="title-books" *ngFor="let book of getBooks; let indexBook = index" (click)="openDialog(indexBook)"> 
+                        {{book.name}} 
+
+                        <div style="border: 5px solid green;">
+                            image book
+                        </div>
+        
+                </div><br><br>
+
+                
+            </div>
+        </div>
+       
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
