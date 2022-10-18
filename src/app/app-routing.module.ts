@@ -23,11 +23,15 @@ const routes: Routes = [
   },
   {
     path:'movies',
-    component:MoviesComponent
+    component:MoviesComponent,
+    canActivate: [ AuthGuard],
+    canLoad: [ AuthGuard ]
   },
   {
     path:'characters',
-    loadChildren: () => import('./characters/characters.module').then( m => m.CharactersModule)
+    loadChildren: () => import('./characters/characters.module').then( m => m.CharactersModule),
+    canActivate: [ AuthGuard],
+    canLoad: [ AuthGuard ]
   },
   {
     path:'404',
