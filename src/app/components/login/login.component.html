@@ -1,1 +1,27 @@
-<p>login component</p>
+<body>
+    <div class="login-page">
+    <div class="form">
+        <span class="tittle"> LOGIN </span> 
+        <br>
+        <br>
+        <form [formGroup]="reactiveForm">
+            <label >UserName</label>
+            <input type="text" placeholder="UserName" formControlName="userName" #userName>
+            <span style="color: red" *ngIf=" user && user.invalid && user.touched"> UserName requiered</span>
+    
+        <br><br>
+        
+            <label >Password</label>
+            <input type="text" placeholder="password" formControlName="passWord" #passWord>
+            <span style="color: red" *ngIf=" password && password.invalid && password.touched"> Password requiered</span>
+    
+        <br><br>
+    
+            <button (click)="onSubmit(userName.value,password.value)"
+            [disabled]="reactiveForm.invalid">Send</button>
+        </form>
+    </div>
+    
+    <div *ngIf="diplayLoginIncorrect" class="form">Usuario o Contraseña Incorrecta </div>
+    </div>
+    </body>

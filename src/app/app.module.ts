@@ -14,7 +14,7 @@ import { SharedModule } from './shared/shared.module';
 import { MoviesComponent } from './components/movies/movies.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { DialogComponent } from './components/dialog/dialog.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,8 +33,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    CommonModule,
     FormsModule,
-    CommonModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

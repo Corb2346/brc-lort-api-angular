@@ -1,23 +1,38 @@
 <mat-toolbar color = "primary">
     <mat-toolbar-row>
-        <button mat-icon-button>
-            <mat-icon (click)="sidenav.toggle();"> menu</mat-icon>
-        </button>
-        <div> <h1>Welcome to the One api to rule them all  </h1></div>
-        
+
+            <div class="left-container">   
+                    <button mat-icon-button>
+                    <mat-icon (click)="sidenav.toggle();"> menu</mat-icon>
+                    </button>
+                    <h1>Welcome to the One api to rule them all  </h1>
+            </div>
+            
+    
+                <div class="right-container"> 
+                    <p class="userName-title">{{userName}}</p>
+                    <button mat-icon-button>
+                        <mat-icon (click)="logOut()">exit_to_app</mat-icon>
+                    </button>
+
+                    
+                </div>
+                
+
         
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav  > 
+    <mat-sidenav #sidenav [routerLinkActive]="'active'"  > 
         <mat-nav-list>
 
-           <a class="nav-bar" [routerLink]="['/movies']" routerLinkActive="active"> Movies </a>
-           <a class="nav-bar" [routerLink]="['/characters']" routerLinkActive="active">Characters </a>
+           <a class="nav-bar" [routerLink]="['/movies']"   > Movies </a>
+           <a class="nav-bar" [routerLink]="['/characters']" >Characters </a>
 
         </mat-nav-list>
     </mat-sidenav >
+
     <mat-sidenav-content>
 
         <div> 

@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { AuthGuard } from './services/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,9 @@ const routes: Routes = [
   },
   {
     path:'mainmenu',
-    component:MainmenuComponent
+    component:MainmenuComponent,
+    canActivate: [ AuthGuard],
+    canLoad: [ AuthGuard ]
   },
   {
     path:'movies',

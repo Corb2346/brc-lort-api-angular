@@ -14,6 +14,25 @@ body{
     border: 5px solid red;
 }
 
+p.userName-title{
+    margin  : 0%;
+}
+
+mat-toolbar-row{
+    display: flex;
+    justify-content: space-between;
+}
+.left-container{
+    display: flex;
+    align-items: center;
+}
+.right-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+}
+
 
 mat-sidenav-content{
     display: flex;
@@ -22,7 +41,7 @@ mat-sidenav-content{
 }
 
 mat-sidenav{
-    width: 150px;
+    width: 170px;
     height: 900px;
     background-color: rgb(79, 43, 141);
     font-size: 26px;
@@ -34,6 +53,7 @@ mat-nav-list{
    margin-top: 20px;
    display: flex;
    flex-direction: column;
+    margin-left: 15px;
 }
 
 a.nav-bar{

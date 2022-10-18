@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,11 +10,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  
+  reactiveForm: FormGroup;
 
-  constructor() { }
+  public userName: string ='';
+  public passWord: string ='';
+  diplayLoginIncorrect: boolean = false;
+  auth:boolean = true;
+  
+  constructor( private router:Router,public loginService:LoginService) { }
 
   ngOnInit(): void {
-
+    this.setData();
+    this.reactiveForm = new FormGroup({
+      userName: new FormControl('',[Validators.required]),
+      passWord: new FormControl('',[Validators.required])
+   });
   }
+
+  onSubmit(userName:string,passWord:string){
+    this.userName = userName;
+    this.passWord = passWord;
+    console.log("username",this.userName, "password", this.passWord);
+
+    let usernameRecover = this.loginService.getUserData()
+    
+    let passwordRecoverd = this.loginService.getPasswordData();
+
+    this.loginService.setUserData(userName,this.auth);
+    this.loginService.setPasswordData(passWord);
+
+    console.log("dato traido del localstorage", typeof(usernameRecover),passwordRecoverd);
+
+    if(usernameRecover == this.userName && passwordRecoverd == this.passWord){
+      this.loginService.setUserData(userName,this.auth);
+        this.router.navigate(['mainmenu'])
+    } else {
+      this.loginService.setUserData(userName,!this.auth);
+      console.log("usuario o contraseña incorrecta");
+      this.diplayLoginIncorrect = !this.diplayLoginIncorrect;
+      console.log(this.diplayLoginIncorrect);
+      
+    }
+  }
+
+  setData(){
+    console.log("data almacenada");
+    this.loginService.setSession();
+  }
+
+  get user()
+  {
+    return this.reactiveForm.get('userName')
+  }
+
+  get password()
+  {
+    return this.reactiveForm.get('passWord')
+  }
+
 
 }
