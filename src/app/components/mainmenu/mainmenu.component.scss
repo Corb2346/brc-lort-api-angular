@@ -8,11 +8,35 @@ body{
 }
 
 .title-books{
-    width: 250px;
-    font-size: 26px;
+    
+    font-size: 30px;
     margin: 5%;
     border: 5px solid red;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    color: burlywood;
 }
+
+.title-books img{
+    background-repeat: no-repeat;
+    background-size: auto;
+    width: 350px;
+    height: auto;
+}
+
+.titlebook{
+    line-height: normal;
+    position: relative;
+    top: 250px;
+    left: 50px;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
 p.userName-title{
     margin  : 0%;

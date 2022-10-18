@@ -14,7 +14,7 @@ export class MainmenuComponent implements OnInit {
 
   logout: boolean = false;
   userName:string;
-  getMovies:any [] =[];
+
   getBooks: any [] = [];
   
   constructor(private GetDataService:GetDataService,public dialgog:MatDialog,public loginService:LoginService,private router:Router) { }
@@ -22,9 +22,8 @@ export class MainmenuComponent implements OnInit {
   ngOnInit(): void {
     this.userName = this.loginService.getUserData();
     console.log(this.userName);
-    
-    //this.getmoviesLotr();
-     //this.getbooks();
+
+     this.getbooks();
   }
 
   getbooks(){
@@ -36,14 +35,7 @@ export class MainmenuComponent implements OnInit {
     })
   }
 
-  getmoviesLotr(){
-    this.GetDataService.getMovies().subscribe({
-      next: resp => {
-        this.getMovies = resp.docs;
-        console.log(this.getMovies); 
-      }
-    })
-  }
+  
 
   openDialog(indexBook:number,){
     console.log("clic en titulos",indexBook);

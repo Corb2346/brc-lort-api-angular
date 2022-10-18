@@ -2,8 +2,37 @@
     <mat-toolbar-row>
         <div> <h1> movies page </h1></div>
         
-        <button (click)="returnMainMenu()"> return </button>
+        <button class="returnBtn"> 
+            <mat-icon (click)="returnMainMenu()" >keyboard_return</mat-icon>    
+        </button>
     </mat-toolbar-row>
 
 
 </mat-toolbar>
+
+<div class="grid-container">
+
+    <mat-card class="example-card" *ngFor="let movie of getMovies">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image" >
+            <img src="assets/images/ring_profile.jpg" style="width: 50px; height:50px"> 
+        </div>
+      <mat-card-title>{{movie.name}}</mat-card-title>
+      <mat-card-subtitle>Duration in Minutes: {{movie.runtimeInMinutes}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/images/lotr.jpg">
+    <mat-card-content>
+      <p>
+      Academy Awards Nominations:  {{movie.academyAwardNominations}}
+      </p>
+      <p>
+        Academy Awards Win:  {{movie.academyAwardWins}}
+      </p>
+    </mat-card-content>
+
+  </mat-card>
+
+
+
+</div>
+

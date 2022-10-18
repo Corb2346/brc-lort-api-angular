@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { GetDataService } from 'src/app/services/get-data.service';
 
 
 @Component({
@@ -9,9 +10,21 @@ import { Router } from '@angular/router';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  getMovies:any [] =[];
+
+  constructor(private router:Router,private GetDataService:GetDataService ) {}
 
   ngOnInit(): void {
+    this.getmoviesLotr();
+  }
+
+  getmoviesLotr(){
+    this.GetDataService.getMovies().subscribe({
+      next: resp => {
+        this.getMovies = resp.docs;
+        console.log(this.getMovies); 
+      }
+    })
   }
 
   returnMainMenu(){
