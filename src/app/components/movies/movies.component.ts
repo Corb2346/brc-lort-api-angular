@@ -15,7 +15,7 @@ export class MoviesComponent implements OnInit {
   constructor(private router:Router,private GetDataService:GetDataService ) {}
 
   ngOnInit(): void {
-    //this.getmoviesLotr();
+    this.getmoviesLotr();
   }
 
   getmoviesLotr(){

@@ -10,12 +10,17 @@
 </mat-toolbar>
 
     <div class="quote-container"> 
-        <div class="quoteSaid"> quote </div>
-        <br>
-        <div>{{character.name</div>  
+        <div class="quoteSaid">"{{elementGot.dialog}}" </div>
         <br>
 
+        <div class="characterName" >{{character[0].name}}</div>  
+        <br>
+            <button (click)="getQuotes()" >getRandoQuote </button>
+
+        
     </div>
+
+    
 
 
 

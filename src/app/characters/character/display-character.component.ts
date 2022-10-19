@@ -9,16 +9,16 @@ import { GetDataService } from '../../services/get-data.service';
 })
 export class DisplayCharacterComponent implements OnInit {
 
-  characteriD:string='5cd99d4bde30eff6ebccfbe6';
+  characteriD:string='';
   quotesArray: any[] = [];
-  character:any [] =[];
+  character:any[]=[];
+  elementGot:any={};
 
   constructor(private router:Router,private getDataService:GetDataService) { }
 
   ngOnInit(): void {
-    //this.getQuotes();
-    //this.getCharacterById(this.characteriD);
-    this.getrandomQuote();
+    this.getQuotes();
+
   }
 
   returnMainMenu(){
@@ -30,6 +30,15 @@ export class DisplayCharacterComponent implements OnInit {
       next: response => {
         this.quotesArray = response.docs
         console.log(this.quotesArray);
+        let randomNumber = Math.floor(Math.random() * 1000);
+        
+        console.log(randomNumber);
+        console.log("obtuve este numero alzara", randomNumber);
+        this.elementGot = this.quotesArray.at(randomNumber)
+        console.log("obtuves este elemento con array.at:",this.elementGot);
+        this.characteriD = this.elementGot.character;
+        console.log("este id character lo saque del array,",this.characteriD);
+        this.getCharacterById(this.characteriD)
       }
     })
   }
@@ -37,17 +46,10 @@ export class DisplayCharacterComponent implements OnInit {
   getCharacterById(characteriD:string){
     this.getDataService.getCharacterById(characteriD).subscribe({
       next: response => {
-        this.character = response;
+        this.character = response.docs;
         console.log("this.character",this.character);
-        
       }
     })
   }
 
-  getrandomQuote(){
-    let randomNumber = Math.floor(Math.random() * 1000);
-    console.log(randomNumber);
-    console.log("element in array with this index:",randomNumber,this.quotesArray.at(randomNumber));
-    
-  }
 }
