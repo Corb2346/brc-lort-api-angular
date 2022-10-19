@@ -3,18 +3,27 @@ body{
 }
 .booksContainer{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     height: 620px;
-    border: 5px blue solid;
+
+}
+.maintitle{
+    display: flex;
+    justify-content: center;
+    font-style: oblique;
+    font-size: xxx-large;
+    margin-top: 50px;
 }
 
 .title-books{
-    
+    width: min-content;
     font-size: 30px;
-    margin: 5%;
-    border: 5px solid red;
+    margin: 10px;
+
     display: flex;
     flex-wrap: wrap-reverse;
-    color: burlywood;
+
 }
 
 .title-books img{
@@ -27,19 +36,17 @@ body{
 .titlebook{
     line-height: normal;
     position: relative;
-    top: 250px;
-    left: 50px;
+    top: 275px;
+    left: 40px;
     width: 250px;
-    height: 50px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+    font-style: italic;
+    color: rgb(195,153,79);
 
-
-p.userName-title{
-    margin  : 0%;
 }
 
 mat-toolbar-row{

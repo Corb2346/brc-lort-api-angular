@@ -1,0 +1,36 @@
+mat-toolbar-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.returnBtn{
+    background-color: rgb(79, 43, 141);
+    border: 2px solid white;
+}
+
+mat-icon{
+    color: white;
+}
+
+table {
+    width: 100%;
+  }
+
+  .quoteSaid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+    font-style: oblique;
+    font-size: xx-large;
+  }
+
+ .quote-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 610px;
+    max-height: 610px;
+  }

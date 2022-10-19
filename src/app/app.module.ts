@@ -12,7 +12,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { MoviesComponent } from './components/movies/movies.component';
-import { CharactersComponent } from './components/characters/characters.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,7 +23,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainmenuComponent,
     NotFoundComponent,
     MoviesComponent,
-    CharactersComponent,
     DialogComponent,
   ],
   imports: [

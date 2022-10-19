@@ -18,8 +18,6 @@
                     
                 </div>
                 
-
-        
     </mat-toolbar-row>
 </mat-toolbar>
 
@@ -36,18 +34,24 @@
     <mat-sidenav-content>
 
         <div> 
-            <div> <h1> Books from the Lord Of The Rings:</h1></div>
+            <div class="maintitle"> Books from the Lord Of The Rings:</div>
 
             <div class="booksContainer"> 
+
+           <!--    <div class="title-books">
+                <div class="titlebook" >fellow ship of the ring  </div>
+                <img src="assets/images/lord_of_the_rings_book.jpg">
+            --> 
+          
+
                 <div class="title-books" *ngFor="let book of getBooks; let indexBook = index" (click)="openDialog(indexBook)">
+
                     <img src="assets/images/lord_of_the_rings_book.jpg"> 
                         
-                    <div class="titlebook">{{book.name}}  </div> 
+                    <div class="titlebook">{{book.name}} </div> 
         
-                </div><br><br>
-
-                
-            </div>
+                </div>
+            </div> 
         </div>
        
     </mat-sidenav-content>

@@ -30,6 +30,43 @@ export class GetDataService {
     )
   }
 
+  getQuotes(){
+    let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
+   
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth_token}`
+      });
+      
+      const requestOptions = { headers: headers };
+      return this.http.get('https://the-one-api.dev/v2/quote',requestOptions).pipe(
+      map( (resp:any) => {
+        console.log(resp);
+        return resp;
+      })
+    )
+  }
+
+  getCharacterById(idCharacter:string){
+    let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
+   
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth_token}`
+      });
+      
+      const requestOptions = { headers: headers };
+      return this.http.get(`https://the-one-api.dev/v2/character/${idCharacter}`,requestOptions).pipe(
+      map( (resp:any) => {
+        console.log(resp);
+        return resp;
+      })
+    )
+    
+    
+  }
+  
+
   getbooks(){
     return this.http.get('https://the-one-api.dev/v2/book').pipe(
       map( (resp:any) => {
