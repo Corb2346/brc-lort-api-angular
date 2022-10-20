@@ -1,6 +1,4 @@
-body{
-    display: flex;
-}
+
 .booksContainer{
     display: flex;
     justify-content: center;
@@ -14,13 +12,14 @@ body{
     font-style: oblique;
     font-size: xxx-large;
     margin-top: 50px;
+    text-align: center;
+    line-height: normal;
 }
 
 .title-books{
     width: min-content;
     font-size: 30px;
     margin: 10px;
-
     display: flex;
     flex-wrap: wrap-reverse;
 
@@ -89,7 +88,6 @@ mat-nav-list{
 
 a.nav-bar{
     margin-bottom: 20px;
-    //border: 2px dotted yellow;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -98,4 +96,7 @@ a.nav-bar{
     border-left: 3px yellow solid;
     border-bottom: 3px yellow solid;
     background-color:rgb(62, 24, 128);
+}
+p.userName-title{
+    margin: 0%;
 }

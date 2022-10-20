@@ -1,10 +1,11 @@
 <mat-toolbar color = "primary">
     <mat-toolbar-row>
-        <div> <h1> Characters page</h1></div>
+        <div> <h1> Characters Quotes</h1></div>
         
-        <button class="returnBtn"> 
-            <mat-icon (click)="returnMainMenu()" >keyboard_return</mat-icon>    
-        </button>
+            <button class="returnBtn"> 
+                <mat-icon (click)="returnMainMenu()" >keyboard_return</mat-icon>    
+            </button>
+
 </mat-toolbar-row>
 
 </mat-toolbar>
@@ -13,9 +14,9 @@
         <div class="quoteSaid">"{{elementGot.dialog}}" </div>
         <br>
 
-        <div class="characterName" >{{character[0].name}}</div>  
+        <div class="characterName" >--{{character[0].name}}--</div>  
         <br>
-            <button (click)="getQuotes()" >getRandoQuote </button>
+            <button (click)="getQuotes()" >getRandomQuote </button>
 
         
     </div>

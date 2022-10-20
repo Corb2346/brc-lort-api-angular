@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     CharactersRoutingModule,
     SharedModule
-  ]
+  ],
+  exports:[SharedModule]
 })
 export class CharactersModule { }

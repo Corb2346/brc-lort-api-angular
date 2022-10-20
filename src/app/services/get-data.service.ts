@@ -13,16 +13,16 @@ export class GetDataService {
   constructor(private http: HttpClient) { }
 
   getMovies(){
-    let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
+    //let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
    
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${auth_token}`
-      });
+  //  const headers = new HttpHeaders({
+    //  'Content-Type': 'application/json',
+   //   'Authorization': `Bearer ${auth_token}`
+   //   });
       
-      const requestOptions = { headers: headers };
+   //   const requestOptions = { headers: headers };
 
-    return this.http.get('https://the-one-api.dev/v2/movie',requestOptions).pipe(
+    return this.http.get('https://the-one-api.dev/v2/movie').pipe(
       map( (resp:any) => {
         console.log(resp);
         return resp;
@@ -31,15 +31,15 @@ export class GetDataService {
   }
 
   getQuotes(){
-    let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
+    /*let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
    
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${auth_token}`
       });
       
-      const requestOptions = { headers: headers };
-      return this.http.get('https://the-one-api.dev/v2/quote',requestOptions).pipe(
+      const requestOptions = { headers: headers };*/
+      return this.http.get('https://the-one-api.dev/v2/quote'/*,requestOptions*/).pipe(
       map( (resp:any) => {
         console.log(resp);
         return resp;
@@ -48,15 +48,15 @@ export class GetDataService {
   }
 
   getCharacterById(idCharacter:string){
-    let auth_token = "uW8XWCGiTSANZ6TXFYeZ";
+    /*et auth_token = "uW8XWCGiTSANZ6TXFYeZ";
    
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${auth_token}`
       });
       
-      const requestOptions = { headers: headers };
-      return this.http.get(`https://the-one-api.dev/v2/character/${idCharacter}`,requestOptions).pipe(
+      const requestOptions = { headers: headers };*/
+      return this.http.get(`https://the-one-api.dev/v2/character/${idCharacter}`/*,requestOptions*/).pipe(
       map( (resp:any) => {
         console.log(resp);
         return resp;

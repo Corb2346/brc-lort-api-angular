@@ -5,6 +5,7 @@ import { MainmenuComponent } from './components/mainmenu/mainmenu.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { AuthGuard } from './services/guards/auth.guard';
+import { LotrResolver } from './services/resolver/lotr.resolver';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   {
     path:'mainmenu',
     component:MainmenuComponent,
+    resolve:{
+      books: LotrResolver
+    },
     canActivate: [ AuthGuard],
     canLoad: [ AuthGuard ]
   },
