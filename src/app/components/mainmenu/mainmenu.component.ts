@@ -8,7 +8,8 @@ import { DialogComponent } from '../dialog/dialog.component';
 @Component({
   selector: 'app-mainmenu',
   templateUrl: './mainmenu.component.html',
-  styleUrls: ['./mainmenu.component.scss']
+  styleUrls: ['./mainmenu.component.scss'],
+  
 })
 export class MainmenuComponent implements OnInit {
 
@@ -47,8 +48,9 @@ export class MainmenuComponent implements OnInit {
     console.log(typeof(indexBook));
     this.dialgog.open(DialogComponent,{
       data : indexBook,
-      height: '700px',
-      width: '600px',
+      height: '680px',
+      width: '580px',
+      
     })
     }
 
