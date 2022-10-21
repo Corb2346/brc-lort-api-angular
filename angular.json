@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lotr-api-practice",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -35,6 +35,14 @@
           },
           "configurations": {
             "production": {
+
+              "buildOptimizer": true,
+              "optimization": true,
+              "vendorChunk": false,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "namedChunks": false,
+
               "budgets": [
                 {
                   "type": "initial",
